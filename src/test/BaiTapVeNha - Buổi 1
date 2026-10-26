@@ -1,0 +1,84 @@
+2. Tìm hiểu một vài framework: 
+*** Cucumber using Serenity BDD and Screenplay: https://serenity-bdd.github.io/docs/tutorials/cucumber-screenplay
+1. Các thành phần chính
+** Cucumber:
+- Khái niệm: là công cụ hỗ trợ phát triển hướng hành vi BDD(behavior- driven deverlopment)
+- Sử dụng ngôn ngữ Gherkin(given-when-then) để viết các kịch bản gần gũi với ngôn ngữ tự nhiên giúp developer, tester, BA dễ dàng hiểu và thống nhất nghiệp vụ
+** Serenity BDD:
+- Khái niệm: là một thư viện mã nguồn mở cho hệ sinh thái Java, đóng vai trò là người quản lý
+- Serenity tích hợp sâu với Cucumber để tụ động sinh ra các báo cáo chi tiết, trực quan kèm hình ảnh từng bước thực thi mà không cần phải tự code thêm phần chụp màn hình hay tạo file HTML/XML thủ công
+** Screenplay partten:
+- Khái niệm: là một mẫu thiết kế hiện đại thay thế cho Page Object Model truyền thống
+- Screenplay tập trung vào trải nghiệm người dùng thay vì tập trung vài cấu trúc trang web
+2. Cách chúng kết họp với nhau trong dự án:
+    1. File feature(cucumber): Định nghĩa các kịch bản kiểm thử bằng cú pháp Gherkin
+    2. Step Denfinitions(Glue code): Ánh xạ từ câu lênh Gherkin sang mã java
+    3. Screenplay layer: Thay vì viết code selenium trực tiếp trong step denfinition, step sẽ gọi actor thực hiện các task theo mô hình screenplay
+    4. Serenity BDD runner: Chạy kịch bản và tổng hợp kết quả thành một báo cáo HTML cực kì sinh động và phân rã đến từng bước nghiệp vụ và kỹ thuật
+
+3. Lợi ích khi sử dụng kết hợp:
+-  Đọc hiểu dễ dàng: Nghiệp vụ rõ rang nhờ cấu trúc Gherkin, cấu trúc code sạch và hướng đối tượng trách nhiệm rõ ràng nhò screenplay
+- Báo cáo chuyên nghiệp: Serenity BDD cung cấp sẵn các báo cáo tiến độ theo từng feature, từng requirement và kịch bản
+- Dễ bảo trì và tái sử dụng: Screenplay giúp tách rời các hành động và câu hỏi, tránh tình trạng trùng lặp code
+
+
+*** playwright: https://playwright.dev/docs/intro
+1. Playwright là gì:
+Playwright Test là một framework kiểm thử đầu cuối dành cho các ứng dụng webb hiện đại.
+Nó tích hợp trình chạy kiểm thử, các khắng định, khả năng cách ly, song song hóa và các công cụ phong phú
+
+2. Các phương pháp cài đặt playwright
+- Sử dụng npm: npm init playwright@latest
+- yarn: yarn create playwright
+- hoặc pnpm: pnpm create playwright
+
+3. - Khả năng hỗ trợ đa dạng: đa trình duyệt, đa ngôn ngữ(TypeScript, Javascript, java, python, C#), đa nền tảng
+ - Auto-waiting và web-first assertions: Playwright tự động chờ các kiểm tra khả năng thực thi hoàn tất trước khi thực hiện mỗi hành động.
+Không cần phải thêm các lệnh chờ thủ công hoặc xử lý các điều kiện tranh chấp.
+- Playwright có thể tự động tạo các bài kiểm tra, cung cấp một cách nhanh chóng để bắt đầu thử nghiệm.
+ Codegen mở một cửa sổ trình duyệt để tương tác và Playwright Inspector để ghi lại, sao chép và quản lý các bài kiểm tra đã tạo.
+ - Browser context và chạy song song: Với Playwright, bạn có thể chạy một bài kiểm tra đơn lẻ, một tập hợp các bài kiểm tra hoặc tất cả các bài kiểm tra.
+ Các bài kiểm tra có thể được chạy trên một trình duyệt hoặc nhiều trình duyệt bằng cách sử dụng --projectcờ.
+ Theo mặc định, các bài kiểm tra chạy song song và ở chế độ không giao diện người dùng (headless mode), nghĩa là không có cửa sổ trình duyệt nào mở ra trong khi chạy các bài kiểm tra và kết quả sẽ hiển thị trong terminal.
+- Bộ công cụ gỡ lỗi mạnh: Trace Viewer, UI Mode và Codegen: Playwright Trace Viewer là một công cụ giao diện đồ họa (GUI) cho phép khám phá các bản ghi dấu vết Playwright của các bài kiểm tra,
+nghĩa là có thể quay lại và tiến tới từng hành động của bài kiểm tra và trực quan hóa những gì đã xảy ra trong mỗi hành động đó.
+- Giả lập thiết bị, mạng và chặn request
+- Tích hợp AI: Test Agents và Playwright MCP
+* Tiện ích mở rộng Playwright cho VS Code mang sức mạnh của Playwright Test trực tiếp vào trình soạn thảo, cho phép chạy, gỡ lỗi và tạo các bài kiểm tra với trải nghiệm giao diện người dùng liền mạch.
+    Hướng dẫn cách thiết lập tiện ích mở rộng và sử dụng các tính năng cốt lõi của nó để tăng tốc quy trình kiểm thử từ đầu đến cuối
+    // theo hướng dẫn ở link: https://playwright.dev/docs/getting-started-vscode
+
+4. Quy trình làm việc thực hiện các bước sau:(Playwright vs VS Code) refer: https://playwright.dev/docs/ci-intro
+   1. Sao chép kho lưu trữ của bạn
+   2. Cài đặt Node.js
+   3. Cài đặt các thư viện phụ thuộc NPM
+   4. Cài đặt Playwright Browsers
+   5. Chạy các bài kiểm tra Playwriter
+   6. Tải báo cáo HTML lên giao diện người dùng GitHub.
+
+5. Ứng dụng thực tế của Playwright
+   Nhờ tính linh hoạt, Playwright được dùng trong nhiều bối cảnh chứ không chỉ giới hạn ở việc kiểm thử giao diện.
+   5.1. Kiểm thử end-to-end cho ứng dụng web
+   5.2. Kiểm thử hồi quy trong CI/CD
+   5.3. Kiểm thử API kết hợp giao diện
+   5.4. Thu thập dữ liệu web và tự động hóa tác vụ lặp lại
+   5.5. Kiểm thử giao diện responsive và đa thiết bị
+
+***********
+3. Trả lời các câu hỏi:
+** Automation test là gì?
+- Automation test là một quá trình xử lý tự động các bước để thực hiện một test case thay thế manual test
+
+** Tại sao cần auto test?
+Có 5 lý do để cần auto test:
+1. Nó nhanh: Thay vì check manual thuần thủ công step by step, thì automation test chỉ cần một click là chạy full test case
+2. Chi phí thấp: Khi thực hiện test lại một hệ thống với nhiều màn hình, nhiều item cần check thì việc check thủ công cần nhiều resource để test hơn là auto test
+3. Độ tin cậy cao: thuần manual test phụ thộc vào con người nên khó tránh khỏi nhiều sai sót chủ quan. khi dùng auto test thì các case được check đúng điều kiện tránh bị ảnh hưởng bởi các yếu tố chủ quan
+4. Khả năng lặp: Với auto test thì có khả năng dùng lặp lại cao mà không ảnh hưởng tới tính đúng
+5. Khả năng tái sử dụng: Khi hệ thống cần regression test thì việc tái sử dụng auto test là điều cần thiết
+
+** Khi nào cần chạy kịch bản auto test?
+- Khi một dự án đã được phát triển ổn định, ít thay đổi và việc regression test được thực hiện thường xuyên
+- Khi check Performence, Load testing: khi cần giả lập nhiều con người để truy cập cùng lúc
+- Khi kiểm thử các case lặp đi lặp lại
+- Tích hợp vào quy trinhg CI/CD: set time để run tự động
