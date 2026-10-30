@@ -1,0 +1,42 @@
+1. Sau khi add to cart 3 sản phẩm bất kỳ, hãy tìm tất cả các locator trong màn hình:
+Checkout: Overview và Checkout: Complete! (xem ảnh để biết locator cần tìm)
+   1. Checkout: Overview:
+   //span[contains(text(),'Checkout')]
+   //div[contains(text(),'QTY')]
+   //div[contains(text(),'Des')]
+   //div[@class='cart_list']
+   //div[contains(text(),'Backpack')]
+   //div[contains(text(),'laptop')]
+   //div[contains(text(),'laptop')]/ancestor::div[@class='cart_item']/descendant::div[contains(@class,'price')]
+   //div[contains(text(),'Onesie')]/ancestor::div[@class='cart_item']/descendant::div[contains(@class,'price')]
+   //div[contains(text(),'Bike')]/ancestor::div[@class='cart_item']/descendant::div[contains(@class,'price')]
+   //div[contains(text(),'Pay')]
+   //div[contains(text(),'SauceCard')]
+   //div[contains(text(),'Ship')]
+   //div[contains(text(),'Free')]
+   //div[contains(text(),'Price Total')]
+   //div[contains(text(),'Item total')]
+   //div[contains(text(),'Tax')]
+   //div[contains(text(),'Total:')]
+   //button[contains(text(),'Cancel')]
+   //button[contains(text(),'Finish')]
+
+   2. Checkout: Complete!
+   //span[contains(text(),'Com')]
+   //img[contains(@class,'express')]
+   //h2[contains(text(),'Thank')]
+   //div[contains(text(),'Your order')]
+   //button[contains(text(),'Back')]
+   //button[contains(text(),'Gen')]
+
+2. Tìm tất cả locator trong đường dẫn sau: https://saucelabs.com/request-demo
+    //div[@class='v2-rd-form-card']
+    //h3[contains(text(),'demo')]
+    //input[contains(@id,'Email')]
+    //input[contains(@id,'Company')]
+    //select[contains(@id,'Use')]
+    //textarea[contains(@id,'Comments')]
+    //button[contains(text(),'demo')]
+    //p[contains(text(),'email')]
+
+3. Luyện tập tìm locator: https://flukeout.github.io/
