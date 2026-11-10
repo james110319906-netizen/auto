@@ -153,5 +153,6 @@ public class BTVN_Day4 {
         } else {
             System.out.println("Không tìm thấy Button Back home hoặc nút bị ẩn: SAI");
         }
+        driver.quit();
     }
 }
