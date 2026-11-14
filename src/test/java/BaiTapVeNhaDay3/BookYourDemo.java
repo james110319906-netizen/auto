@@ -64,30 +64,31 @@ public class BookYourDemo {
         Thread.sleep(Duration.ofMillis(3000));
         driver.quit();
     }
-//    public void testCase02_Country_US_Requires_State() throws InterruptedException {
-//        WebElement businessMail = driver.findElement(By.id("Business-Email"));
-//        businessMail.sendKeys("qa.test@example.com");
-//        WebElement firstName = driver.findElement(By.name("First Name"));
-//        firstName.sendKeys("Chau");
-//        WebElement lastName = driver.findElement(By.name("Last Name"));
-//        lastName.sendKeys("Nguyen");
-//        WebElement phoneNumber = driver.findElement(By.id("Phone"));
-//        phoneNumber.sendKeys("0983178335");
-//        WebElement company = driver.findElement(By.name("Company"));
-//        company.sendKeys("FPT");
-//        WebElement countryDropdown = driver.findElement(By.xpath("//select[@id ='Country']"));
-//        Select selectCountry = new Select(countryDropdown);
-//        selectCountry.selectByValue("United States");
-//        WebElement state = driver.findElement(By.xpath("//select[@id='State']"));
-//        Select slState = new Select(state);
-//        slState.deselectByIndex(1);
-//        WebElement formElement1 = driver.findElement(By.xpath("//form"));
-//        JavascriptExecutor js1 = (JavascriptExecutor) driver;
-//        Boolean isFormValid1 = (Boolean) js1.executeScript("return arguments[0].checkValidity();", formElement1);
-//        org.testng.Assert.assertTrue(isFormValid1, "Kịch bản 1: Form phải hợp lệ!");
-//        Thread.sleep(Duration.ofMillis(3000));
-//        driver.quit();
-//    }
+    @Test
+    public void testCase02_Country_US_Requires_State() throws InterruptedException {
+        WebElement businessMail = driver.findElement(By.id("Business-Email"));
+        businessMail.sendKeys("qa.test@example.com");
+        WebElement firstName = driver.findElement(By.name("First Name"));
+        firstName.sendKeys("Chau");
+        WebElement lastName = driver.findElement(By.name("Last Name"));
+        lastName.sendKeys("Nguyen");
+        WebElement phoneNumber = driver.findElement(By.id("Phone"));
+        phoneNumber.sendKeys("0983178335");
+        WebElement company = driver.findElement(By.name("Company"));
+        company.sendKeys("FPT");
+        WebElement countryDropdown = driver.findElement(By.xpath("//select[@id ='Country']"));
+        Select selectCountry = new Select(countryDropdown);
+        selectCountry.selectByValue("United States");
+       WebElement state = driver.findElement(By.xpath("//select[@id='State']"));
+        Select slState = new Select(state);
+       slState.deselectByIndex(1);
+        WebElement formElement1 = driver.findElement(By.xpath("//form"));
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        Boolean isFormValid1 = (Boolean) js1.executeScript("return arguments[0].checkValidity();", formElement1);
+        org.testng.Assert.assertTrue(isFormValid1, "Kịch bản 1: Form phải hợp lệ!");
+        Thread.sleep(Duration.ofMillis(3000));
+        driver.quit();
+    }
     @Test
     public void testCase03_Missing_Country_Error() throws InterruptedException {
         WebElement businessMail = driver.findElement(By.id("Business-Email"));
